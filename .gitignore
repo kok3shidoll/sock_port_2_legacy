@@ -1,0 +1,6 @@
+iphone-include/
+mig/
+test
+*.o
+*.a
+.DS_Store
