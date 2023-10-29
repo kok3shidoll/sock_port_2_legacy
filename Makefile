@@ -18,10 +18,10 @@ LD_LIBS	?= -framework IOKit -framework CoreFoundation
 .PHONY: all clean
 
 all: mig
-	$(CLANG) $(ARCH) $(C_FLAGS) $(LD_LIBS) -DDEVBUILD *.c -o test -miphoneos-version-min=9.0
+	$(CLANG) $(ARCH) $(C_FLAGS) $(LD_LIBS) -DDEVBUILD *.c -o test -miphoneos-version-min=8.0
 	strip test
 	ldid -Sent.xml test
-	$(CLANG) $(ARCH) $(C_FLAGS) $(LD_LIBS) *.c -miphoneos-version-min=9.0 -c -DAPP -DNOROOT
+	$(CLANG) $(ARCH) $(C_FLAGS) $(LD_LIBS) *.c -miphoneos-version-min=8.0 -c -DAPP -DNOROOT
 	-$(RM) *.a
 	ar rcs sockpuppet.a *.o
 	-$(RM) *.o
